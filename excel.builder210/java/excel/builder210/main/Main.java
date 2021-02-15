@@ -39,7 +39,8 @@ public final class Main {
         for(Document doc : documents)
         	for(Line line : doc.getLines()) {
         		if(!personalAccounts.contains(line.getPersonalAccount()))personalAccounts.add(line.getPersonalAccount());
-        		if(!paymentPeriods.contains(line.getPaymentPeriod()))paymentPeriods.add(line.getPaymentPeriod());
+        		String date =  line.getDatePayment().getMonth() + "." + line.getDatePayment().getYear();
+        		if(!paymentPeriods.contains(date))paymentPeriods.add(date);
         	}
         for(String date : paymentPeriods) {
         	Map<String, Double> m = new HashMap<>();
